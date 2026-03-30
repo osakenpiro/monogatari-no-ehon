@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ものがたりたちの じこしょうかい — にんげんと物語の 10万年史</title>
+<meta property="og:title" content="ものがたりたちの じこしょうかい — にんげんと物語の 10万年史">
+<meta property="og:description" content="シンワちゃん・ムカシさん・ショウセツ・エイガ・ゲーム先輩 — 5つの物語が自己紹介する絵本">
+<meta property="og:url" content="https://osakenpiro.github.io/monogatari-no-ehon/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&family=Kosugi+Maru&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFDF5;
+    --warm-brown: #5D4037;
+    --page-shadow: rgba(93, 64, 55, 0.12);
+    --text-dark: #3E2723;
+    --ch1-color: #BF360C;
+    --ch2-color: #5D4037;
+    --ch3-color: #1B5E20;
+    --ch4-color: #4E342E;
+    --ch5-color: #1565C0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(135deg, #EFEBE9 0%, #FFFDF5 50%, #FFF3E0 100%);
+    font-family: 'Zen Maru Gothic', 'Kosugi Maru', sans-serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .cover { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 40%, rgba(121,85,72,0.08) 0%, transparent 50%); }
+  .cover-title { font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; text-align: center; position: relative; z-index: 1; line-height: 1.4; color: #4E342E; text-shadow: 2px 2px 0 rgba(255,255,255,0.8); }
+  .cover-subtitle { font-size: clamp(1rem, 2.5vw, 1.5rem); color: #4E342E; opacity: 0.7; margin-top: 1rem; position: relative; z-index: 1; text-align: center; }
+  .cover-characters { display: flex; gap: 1.5rem; margin-top: 3rem; position: relative; z-index: 1; flex-wrap: wrap; justify-content: center; }
+  .cover-char { font-size: 3.5rem; animation: float 3s ease-in-out infinite; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); }
+  .cover-char:nth-child(2) { animation-delay: 0.5s; }
+  .cover-char:nth-child(3) { animation-delay: 1s; }
+  .cover-char:nth-child(4) { animation-delay: 1.5s; }
+  .cover-char:nth-child(5) { animation-delay: 2s; }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  .scroll-hint { position: relative; z-index: 1; margin-top: 3rem; font-size: 0.9rem; color: #4E342E; opacity: 0.5; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+  .series-badge { position: relative; z-index: 1; margin-top: 1.5rem; padding: 0.5rem 1.5rem; background: rgba(78,52,46,0.08); border: 1px solid rgba(78,52,46,0.15); border-radius: 2rem; font-size: 0.85rem; color: #4E342E; text-align: center; line-height: 1.6; }
+  .series-badge a { color: #4E342E; text-decoration: underline; }
+  .cover-illustration { width: 80%; max-width: 500px; margin: 2rem auto; display: block; border-radius: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.15); border: 4px solid rgba(255,255,255,0.6); position: relative; z-index: 1; }
+  .illustration { width: 100%; max-width: 600px; margin: 1.5rem auto; display: block; border-radius: 0.8rem; box-shadow: 0 4px 16px rgba(0,0,0,0.1); border: 3px solid rgba(93,64,55,0.1); }
+  .page { max-width: 800px; margin: 3rem auto; padding: 3rem 2.5rem; background: var(--cream); border-radius: 1rem; box-shadow: 0 4px 20px var(--page-shadow), inset 0 0 60px rgba(93,64,55,0.03); position: relative; border: 1px solid rgba(93,64,55,0.1); }
+  .page::before { content: ''; position: absolute; left: 2rem; top: 0; bottom: 0; width: 2px; background: rgba(93,64,55,0.08); }
+  .page-number { position: absolute; bottom: 1rem; right: 1.5rem; font-size: 0.8rem; color: var(--warm-brown); opacity: 0.4; }
+  .chapter-header { text-align: center; margin-bottom: 2rem; }
+  .chapter-icon { font-size: 4rem; display: block; margin-bottom: 0.5rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+  .chapter-title { font-size: 1.8rem; font-weight: 900; line-height: 1.3; }
+  .chapter-subtitle { font-size: 1rem; opacity: 0.6; margin-top: 0.3rem; }
+  .color-ch1 { color: var(--ch1-color); }
+  .char-card.ch1 { border-color: var(--ch1-color); }
+  .rel-fill.ch1 { background: linear-gradient(90deg, var(--ch1-color), var(--ch1-color-light, var(--ch1-color))); }
+  .color-ch2 { color: var(--ch2-color); }
+  .char-card.ch2 { border-color: var(--ch2-color); }
+  .rel-fill.ch2 { background: linear-gradient(90deg, var(--ch2-color), var(--ch2-color-light, var(--ch2-color))); }
+  .color-ch3 { color: var(--ch3-color); }
+  .char-card.ch3 { border-color: var(--ch3-color); }
+  .rel-fill.ch3 { background: linear-gradient(90deg, var(--ch3-color), var(--ch3-color-light, var(--ch3-color))); }
+  .color-ch4 { color: var(--ch4-color); }
+  .char-card.ch4 { border-color: var(--ch4-color); }
+  .rel-fill.ch4 { background: linear-gradient(90deg, var(--ch4-color), var(--ch4-color-light, var(--ch4-color))); }
+  .color-ch5 { color: var(--ch5-color); }
+  .char-card.ch5 { border-color: var(--ch5-color); }
+  .rel-fill.ch5 { background: linear-gradient(90deg, var(--ch5-color), var(--ch5-color-light, var(--ch5-color))); }
+  .char-card { background: white; border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0; border-left: 5px solid; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .char-name { font-size: 1.4rem; font-weight: 900; display: flex; align-items: center; gap: 0.5rem; }
+  .char-species { font-size: 0.8rem; opacity: 0.5; font-weight: 400; font-style: italic; }
+  .char-quote { font-size: 1.1rem; margin: 1rem 0; padding: 1rem; background: rgba(0,0,0,0.02); border-radius: 0.5rem; position: relative; line-height: 1.7; }
+  .char-quote::before { content: '「'; font-size: 1.5rem; opacity: 0.3; position: absolute; top: 0.3rem; left: 0.5rem; }
+  .relationship { display: flex; align-items: center; gap: 0.8rem; margin: 1rem 0; font-size: 0.95rem; }
+  .rel-label { font-weight: 700; white-space: nowrap; }
+  .rel-bar { flex: 1; height: 12px; background: #EEE; border-radius: 6px; overflow: hidden; }
+  .rel-fill { height: 100%; border-radius: 6px; }
+  .story { font-size: 1.05rem; line-height: 2; margin: 1.2rem 0; }
+  .story strong { color: var(--warm-brown); }
+  .highlight-box { background: linear-gradient(135deg, rgba(93,64,55,0.04), rgba(93,64,55,0.08)); border-radius: 0.8rem; padding: 1.5rem; margin: 1.5rem 0; border: 1px dashed rgba(93,64,55,0.2); }
+  .highlight-box h3 { font-size: 1.1rem; margin-bottom: 0.8rem; }
+  .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 0.8rem; margin: 0.5rem 0; }
+  .item-card { background: white; border-radius: 0.8rem; padding: 0.8rem 0.5rem; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: transform 0.2s; }
+  .item-card:hover { transform: translateY(-3px); }
+  .item-emoji { font-size: 2.5rem; display: block; margin-bottom: 0.3rem; }
+  .item-label { font-size: 0.8rem; font-weight: 700; opacity: 0.7; line-height: 1.3; }
+  .finale { text-align: center; padding: 3rem 2rem; max-width: 800px; margin: 3rem auto; }
+  .finale-title { font-size: 1.8rem; font-weight: 900; color: #4E342E; margin-bottom: 1.5rem; }
+  .finale-message { font-size: 1.1rem; line-height: 2; color: var(--text-dark); opacity: 0.8; }
+  .emoji-parade { font-size: 2.5rem; margin: 2rem 0; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .series-links { margin-top: 2rem; font-size: 0.95rem; line-height: 2; }
+  .series-links a { color: #4E342E; text-decoration: underline; }
+  .colophon { margin-top: 3rem; font-size: 0.8rem; opacity: 0.4; }
+  @media (max-width: 600px) { .page { margin: 1.5rem 0.8rem; padding: 2rem 1.5rem; } .page::before { left: 1rem; } }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="cover-title">ものがたりたちの じこしょうかい</div>
+  <div class="cover-subtitle">— にんげんと物語の 10万年史 —</div>
+  <div class="cover-characters">
+    <span class="cover-char">🌍</span>
+    <span class="cover-char">📖</span>
+    <span class="cover-char">📚</span>
+    <span class="cover-char">🎬</span>
+    <span class="cover-char">🎮</span>
+  </div>
+  <img src="images/cover.png" alt="ものがたりたちの じこしょうかい" class="cover-illustration" loading="lazy">
+  <div class="series-badge">📚 じこしょうかいシリーズ 第15巻 ｜ <a href="https://osakenpiro.github.io/jikoshoukai/">シリーズ一覧</a></div>
+  <div class="scroll-hint">↓ スクロールして よんでね ↓</div>
+</section>
+
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🙏</span>
+    <div class="chapter-title">はじめに</div>
+  </div>
+  <p class="story">にんげんは ものがたりを つくる いきもの だ。<br>ほかの どうぶつは、いまを いきる。でも にんげんだけが「<strong>むかし むかし</strong>」と「<strong>もし こうだったら</strong>」を かんがえる。<br><br>存在しない 世界を あたまのなかに つくって、だれかに つたえる。<br><strong>これが できるのは、にんげん だけ。</strong></p>
+  <span class="page-number">1</span>
+</section>
+
+
+<!-- CHAPTER 1 -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🌍</span>
+    <div class="chapter-title color-ch1">だい1しょう：シンワちゃん</div>
+    <div class="chapter-subtitle">— せかいの せつめいしょ —</div>
+  </div>
+  <img src="images/ch1.png" alt="シンワちゃん" class="illustration" loading="lazy">
+
+  <div class="char-card ch1">
+    <div class="char-name">🌍 シンワちゃん <span class="char-species">Mythology</span></div>
+    <div class="char-quote">なぜ かみなりは おちるの？→ かみさまが おこってるから。<br>わたしは、「なぜ？」の さいしょの こたえ だったの。</div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ch1" style="width: 90%"></div></div>
+      <span>★★★★★</span>
+    </div>
+  </div>
+
+  <p class="story">シンワちゃんは <strong>神話</strong>。世界の あらゆる文化に ある、いちばん ふるい ものがたり。</p>
+  <p class="story">ギリシャ神話、日本神話、北欧神話、インド神話…<br>どの文化にも「世界は どうやって はじまったか」の 物語がある。<br>科学が こたえる まえ、神話が こたえていた。</p>
+
+  <div class="highlight-box">
+    <h3>💡 シンワちゃんの せかい</h3>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">⚡</span><span class="item-label">ゼウスの雷</span></div>
+      <div class="item-card"><span class="item-emoji">🌊</span><span class="item-label">イザナギ</span></div>
+      <div class="item-card"><span class="item-emoji">🐍</span><span class="item-label">ヨルムンガンド</span></div>
+      <div class="item-card"><span class="item-emoji">🏺</span><span class="item-label">パンドラの箱</span></div>
+      <div class="item-card"><span class="item-emoji">🌅</span><span class="item-label">天地創造</span></div>
+      <div class="item-card"><span class="item-emoji">🦅</span><span class="item-label">太陽神</span></div>
+    </div>
+  </div>
+  <span class="page-number">2–3</span>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">📖</span>
+    <div class="chapter-title color-ch2">だい2しょう：ムカシさん</div>
+    <div class="chapter-subtitle">— おしえを はこぶ のりもの —</div>
+  </div>
+  <img src="images/ch2.png" alt="ムカシさん" class="illustration" loading="lazy">
+
+  <div class="char-card ch2">
+    <div class="char-name">📖 ムカシさん <span class="char-species">Folktale</span></div>
+    <div class="char-quote">うさぎと かめ、三匹の こぶた、はなさか じいさん。<br>たのしいだけじゃ ないの。ぜんぶ おしえが はいってる。</div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ch2" style="width: 95%"></div></div>
+      <span>★★★★★</span>
+    </div>
+  </div>
+
+  <p class="story">ムカシさんは <strong>昔話・民話</strong>。文字が ない時代から 口伝えで つたわった。</p>
+  <p class="story">世界じゅうの 昔話には <strong>共通パターン</strong> がある。「3つの試練」「末っ子が勝つ」「変身」——<br>文化が ちがっても、にんげんが 語りたい ことは おなじ。</p>
+
+  <div class="highlight-box">
+    <h3>💡 ムカシさんの せかい</h3>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🐢</span><span class="item-label">うさぎとかめ</span></div>
+      <div class="item-card"><span class="item-emoji">🐷</span><span class="item-label">三匹のこぶた</span></div>
+      <div class="item-card"><span class="item-emoji">👴</span><span class="item-label">はなさかじいさん</span></div>
+      <div class="item-card"><span class="item-emoji">🧙</span><span class="item-label">グリム童話</span></div>
+      <div class="item-card"><span class="item-emoji">📜</span><span class="item-label">口承伝統</span></div>
+      <div class="item-card"><span class="item-emoji">🌍</span><span class="item-label">世界共通パターン</span></div>
+    </div>
+  </div>
+  <span class="page-number">4–5</span>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">📚</span>
+    <div class="chapter-title color-ch3">だい3しょう：ショウセツ</div>
+    <div class="chapter-subtitle">— ひとの あたまに はいる はつめい —</div>
+  </div>
+  <img src="images/ch3.png" alt="ショウセツ" class="illustration" loading="lazy">
+
+  <div class="char-card ch3">
+    <div class="char-name">📚 ショウセツ <span class="char-species">Novel</span></div>
+    <div class="char-quote">ぼくを よむと、きみは べつのにんげんに なれる。<br>きみの あたまの なかで、もうひとつの じんせいが はじまる。</div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ch3" style="width: 90%"></div></div>
+      <span>★★★★★</span>
+    </div>
+  </div>
+
+  <p class="story">ショウセツは <strong>小説</strong>。「他人の 頭の中に 入る」という とんでもない 発明。</p>
+  <p class="story">共感力を きたえ、知らない 世界を 体験させ、ときに 人生を かえる。<br>『源氏物語』は 世界初の 長編小説とも いわれる。<br><strong>モジさん（文字）の 最も 美しい つかいかた。</strong></p>
+
+  <div class="highlight-box">
+    <h3>💡 ショウセツの せかい</h3>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">📕</span><span class="item-label">源氏物語</span></div>
+      <div class="item-card"><span class="item-emoji">🕵️</span><span class="item-label">シャーロック</span></div>
+      <div class="item-card"><span class="item-emoji">🧙</span><span class="item-label">ハリー・ポッター</span></div>
+      <div class="item-card"><span class="item-emoji">📖</span><span class="item-label">読書</span></div>
+      <div class="item-card"><span class="item-emoji">✍️</span><span class="item-label">作家</span></div>
+      <div class="item-card"><span class="item-emoji">🧠</span><span class="item-label">共感力</span></div>
+    </div>
+  </div>
+  <span class="page-number">6–7</span>
+</section>
+
+<!-- CHAPTER 4 -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🎬</span>
+    <div class="chapter-title color-ch4">だい4しょう：エイガ</div>
+    <div class="chapter-subtitle">— ひかりで かたる 100年 —</div>
+  </div>
+  <img src="images/ch4.png" alt="エイガ" class="illustration" loading="lazy">
+
+  <div class="char-card ch4">
+    <div class="char-name">🎬 エイガ <span class="char-species">Cinema</span></div>
+    <div class="char-quote">ぼくは まだ 130さい。いちばん わかい。<br>でも ことばが わからなくても つたわる。</div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ch4" style="width: 85%"></div></div>
+      <span>★★★★☆</span>
+    </div>
+  </div>
+
+  <p class="story">エイガは <strong>映画</strong>。1895年、リュミエール兄弟の「工場の出口」が はじまり。</p>
+  <p class="story">130年で 世界最大の ものがたり産業に。<br>映画の ちからは「<strong>言語を 超える</strong>」こと。表情と 音楽と 映像で つたわる。</p>
+
+  <div class="highlight-box">
+    <h3>💡 エイガの せかい</h3>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🎥</span><span class="item-label">リュミエール兄弟</span></div>
+      <div class="item-card"><span class="item-emoji">🍿</span><span class="item-label">ハリウッド</span></div>
+      <div class="item-card"><span class="item-emoji">🎞️</span><span class="item-label">アニメーション</span></div>
+      <div class="item-card"><span class="item-emoji">📺</span><span class="item-label">テレビ</span></div>
+      <div class="item-card"><span class="item-emoji">📱</span><span class="item-label">配信</span></div>
+      <div class="item-card"><span class="item-emoji">🏆</span><span class="item-label">アカデミー賞</span></div>
+    </div>
+  </div>
+  <span class="page-number">8–9</span>
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">🎮</span>
+    <div class="chapter-title color-ch5">だい5しょう：ゲーム先輩</div>
+    <div class="chapter-subtitle">— じぶんで えらぶ ものがたり —</div>
+  </div>
+  <img src="images/ch5.png" alt="ゲーム先輩" class="illustration" loading="lazy">
+
+  <div class="char-card ch5">
+    <div class="char-name">🎮 ゲーム先輩 <span class="char-species">Video Game</span></div>
+    <div class="char-quote">しょうせつは よむ。えいがは みる。おれは <strong>やる</strong>。<br>じぶんで えらんで、じぶんで すすむ。さいきょうの ものがたり。</div>
+    <div class="relationship">
+      <span class="rel-label">なかよし度</span>
+      <div class="rel-bar"><div class="rel-fill ch5" style="width: 80%"></div></div>
+      <span>★★★★☆</span>
+    </div>
+  </div>
+
+  <p class="story">ゲーム先輩は <strong>ゲーム</strong>。いちばん あたらしく、いちばん インタラクティブ。</p>
+  <p class="story">ゲームは <strong>プレイヤーが えらぶ</strong>。分岐し、失敗し、やりなおす。<br>これは「<strong>人生の シミュレーション</strong>」。<br><strong>そして この「じこしょうかいシリーズ」も、やがて ゲームに なる。</strong></p>
+
+  <div class="highlight-box">
+    <h3>💡 ゲーム先輩の せかい</h3>
+    <div class="item-grid">
+      <div class="item-card"><span class="item-emoji">🕹️</span><span class="item-label">アーケード</span></div>
+      <div class="item-card"><span class="item-emoji">🎮</span><span class="item-label">コンソール</span></div>
+      <div class="item-card"><span class="item-emoji">📱</span><span class="item-label">モバイル</span></div>
+      <div class="item-card"><span class="item-emoji">🌍</span><span class="item-label">オンライン</span></div>
+      <div class="item-card"><span class="item-emoji">🏛️</span><span class="item-label">うちゅうのはくぶつかん</span></div>
+      <div class="item-card"><span class="item-emoji">🧠</span><span class="item-label">選択の自由</span></div>
+    </div>
+  </div>
+  <span class="page-number">10–11</span>
+</section>
+
+
+<section class="page">
+  <div class="chapter-header">
+    <span class="chapter-icon">📖</span>
+    <div class="chapter-title">おわりに</div>
+  </div>
+  <p class="story">
+    🌍に おそわったこと — <strong>「こたえが ないとき、ものがたりが こたえになった」</strong>。<br>
+    📖に おそわったこと — <strong>「にんげんが つたえたいことは、せかいじゅう おなじ」</strong>。<br>
+    📚に おそわったこと — <strong>「べつの じんせいを いきられる」</strong>。<br>
+    🎬に おそわったこと — <strong>「ことばが なくても、つたわる」</strong>。<br>
+    🎮に おそわったこと — <strong>「えらべる ものがたりが、いちばん つよい」</strong>。<br>
+  </p>
+  <div class="highlight-box">
+    <h3>🔑 3つの きほん</h3>
+    <p class="story" style="margin: 0;">
+      <strong>①  普遍 — 文化がちがっても、語りたいことは同じ。人間はどこでも物語を求める。</strong><br>
+      <strong>②  共感 — 物語は「他人になる」訓練。共感力は物語から生まれる。</strong><br>
+      <strong>③  参加 — 読むから見るから遊ぶへ。物語はインタラクティブになっている。</strong>
+    </p>
+  </div>
+  <span class="page-number">12</span>
+</section>
+
+<section class="finale">
+  <img src="images/cover.png" alt="ものがたりたちの じこしょうかい" class="cover-illustration" loading="lazy">
+  <div class="finale-title">— おしまい —</div>
+  <div class="finale-message">
+    「ものがたりたちの じこしょうかい」<br>
+    え：チャッピー　ぶん：クロード　かんしゅう：ケンシロウ
+  </div>
+  <div class="series-links">
+    📚 じこしょうかいシリーズ<br>
+    <a href="https://osakenpiro.github.io/jikoshoukai/">シリーズ一覧</a>
+  </div>
+  <div class="colophon">※ このおはなしは わかりやすさを ゆうせんして かんりゃくかしています。</div>
+</section>
+
+</body>
+</html>
